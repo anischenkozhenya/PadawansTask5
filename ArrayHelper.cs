@@ -7,9 +7,24 @@ namespace PadawansTask5
         public static string CheckIfSymmetric(int[] source)
         {
             bool realtrue = false;
-            if (source.Length < 1)
+            try
             {
-                throw new NotImplementedException();
+                if (source == null)
+                {
+                    throw new ArgumentNullException();
+                }
+                if (source.Length == 0)
+                {
+                    throw new ArgumentException();
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+
+            }
+            catch (ArgumentException ex)
+            {
+
             }
             for (int i = 0, j = source.Length - 1; j > 0 && i < source.Length; i++, j--)
             {
